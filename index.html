@@ -14,7 +14,8 @@
             text-shadow: 2px 2px black;
         }
 
-        select, select *{
+        select,
+        select * {
             text-shadow: none;
         }
 
@@ -268,7 +269,16 @@
                         alert("Invalid Ticket!");
                     }
                 })
-                .catch(error => alert('An error occurred')).then(() => {
+                .catch(error => alert('An error occurred'))
+                .then(() => {
+                    scanner.stop();
+
+                    stopBtn.classList.add("hidden")
+                    // scanner = null;
+                    scanArea.innerHTML = '';
+                    scanner.stop();
+
+
                     processing.classList.add('hidden');
                     main.classList.remove('hidden');
 
