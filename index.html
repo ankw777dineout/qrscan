@@ -116,11 +116,11 @@
         </div>
         <!-- <b>Camera has flash: </b> -->
         <!-- <span id="cam-has-flash"></span> -->
-        <div>
+        <!-- <div>
           <button id="flash-toggle">
             📸 Flash: <span id="flash-state">off</span>
           </button>
-        </div>
+        </div> -->
         <br />
         <!-- <b>Detected QR code: </b>
       <span id="cam-qr-result">None</span> -->
@@ -163,7 +163,7 @@
       const camHasCamera = document.getElementById("cam-has-camera");
       const camList = document.getElementById("cam-list");
       const camHasFlash = document.getElementById("cam-has-flash");
-      const flashToggle = document.getElementById("flash-toggle");
+    //   const flashToggle = document.getElementById("flash-toggle");
       const flashState = document.getElementById("flash-state");
       const processing = document.getElementById("processing");
       const main = document.getElementById("main");
@@ -186,7 +186,7 @@
       const updateFlashAvailability = () => {
         scanner.hasFlash().then((hasFlash) => {
           // camHasFlash.textContent = hasFlash;
-          flashToggle.style.display = hasFlash ? "inline-block" : "none";
+        //   flashToggle.style.display = hasFlash ? "inline-block" : "none";
         });
       };
 
@@ -254,13 +254,13 @@
         scanner.setCamera(event.target.value).then(updateFlashAvailability);
       });
 
-      flashToggle.addEventListener("click", () => {
-        scanner
-          .toggleFlash()
-          .then(
-            () => (flashState.textContent = scanner.isFlashOn() ? "on" : "off")
-          );
-      });
+    //   flashToggle.addEventListener("click", () => {
+    //     scanner
+    //       .toggleFlash()
+    //       .then(
+    //         () => (flashState.textContent = scanner.isFlashOn() ? "on" : "off")
+    //       );
+    //   });
 
       function verifyQR(qrTicket) {
         main.classList.add("hidden");
